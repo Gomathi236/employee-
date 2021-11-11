@@ -62,9 +62,10 @@ function deleteRow(tableID) {
       rowCount--;
       i--;
       employees.splice(i,1);
-      localStorage.setItem('employees',JSON.stringify(employees))
+      
     }
   }
+  localStorage.setItem('employees',JSON.stringify(employees))
   
   var rootChkbox = table.rows[0].cells[0].children[0];
   if (rowCount == 1) rootChkbox.checked = false;
