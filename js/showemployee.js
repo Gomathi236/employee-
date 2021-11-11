@@ -22,7 +22,7 @@ function showTable() {
       var newRow = table.insertRow(table.length);
       newRow.setAttribute("index", index);
       var cell1 = newRow.insertCell(0);
-      cell1.innerHTML = `<input type="checkbox"   name="ChildCheckBox" id="ChildCheckBox"  value="${index}"/>`;
+      cell1.innerHTML = `<input type="checkbox" onclick="myFunction()"  name="ChildCheckBox" id="ChildCheckBox"  value="${index}"/>`;
        var cell2 = newRow.insertCell(1);
       cell2.innerHTML = employee.name;
       var cell3 = newRow.insertCell(2);
@@ -71,16 +71,33 @@ function deleteRow(tableID) {
   if (rowCount == 1) rootChkbox.checked = false;
   
 }
-function checkAll() {
-  var checkboxes = document.getElementsByTagName('input');
-var val = null;
-  for (var i = 0; i < checkboxes.length; i++) {
-      if (checkboxes[i].type == 'checkbox') {
-          if (val === null) val = checkboxes[i].checked;
-          checkboxes[i].checked = val;
-      }
+
+ function checkAll(myCheckBox) {
+    var checkboxes = document.querySelectorAll("input[type='checkbox']");
+    console.log("checked");
+    if (myCheckBox.checked == true) {
+      checkboxes.forEach(function (checkboxes) {
+        checkboxes.checked = true;
+        console.log("checked")
+      });
+    } else {
+      checkboxes.forEach(function (checkboxes) {
+        checkboxes.checked = false;
+      });
+    }
   }
-}
+  
+  function myFunction() {
+    var checkboxes = document.getElementById("ChildCheckBox")
+    
+    
+    var button = document.getElementById("button");
+    if (checkboxes.checked == true){
+      button.style.display = "block";
+    } else {
+       button.style.display = "none";
+    }
+  }
 
 
 
