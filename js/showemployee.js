@@ -71,19 +71,13 @@ function deleteRow(tableID) {
   if (rowCount == 1) rootChkbox.checked = false;
   
 }
-function checkAll() {
+function checkAll(myCheckBox) {
     var checkboxes = document.querySelectorAll("input[type='checkbox']");
     console.log("checked");
-    // for(var i=0, n=checkboxes.length;i<n;i++){
-      checkboxes.forEach(function (checkboxes) {
-        checkboxes.checked = true;
+    checkboxes.forEach(function (checkboxes) {
+        checkboxes.checked = myCheckBox.checked;
        });
-    
-    // } else {
-    //   checkboxes.forEach(function (checkboxes) {
-    //     checkboxes.checked = false;
-    //   });
-      }
+}
   
 
   
