@@ -71,14 +71,21 @@ function deleteRow(tableID) {
   if (rowCount == 1) rootChkbox.checked = false;
   
 }
-document.getElementById('select-all').onclick = function() {
+function checkAll() {
     var checkboxes = document.querySelectorAll("input[type='checkbox']");
-   
-    for (var checkbox of checkboxes) {
-      checkbox.checked = this.checked;
-    }
-  }
+    console.log("checked");
+    // for(var i=0, n=checkboxes.length;i<n;i++){
+      checkboxes.forEach(function (checkboxes) {
+        checkboxes.checked = true;
+       });
+    
+    // } else {
+    //   checkboxes.forEach(function (checkboxes) {
+    //     checkboxes.checked = false;
+    //   });
+      }
   
+
   
 function myFunction() {
     var checkboxes = document.getElementById("ChildCheckBox")
