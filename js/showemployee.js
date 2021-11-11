@@ -71,23 +71,16 @@ function deleteRow(tableID) {
   if (rowCount == 1) rootChkbox.checked = false;
   
 }
-
- function checkAll(myCheckBox) {
+document.getElementById('select-all').onclick = function() {
     var checkboxes = document.querySelectorAll("input[type='checkbox']");
-    console.log("checked");
-    if (myCheckBox.checked == true) {
-      checkboxes.forEach(function (checkboxes) {
-        checkboxes.checked = true;
-        console.log("checked")
-      });
-    } else {
-      checkboxes.forEach(function (checkboxes) {
-        checkboxes.checked = false;
-      });
+   
+    for (var checkbox of checkboxes) {
+      checkbox.checked = this.checked;
     }
   }
   
-  function myFunction() {
+  
+function myFunction() {
     var checkboxes = document.getElementById("ChildCheckBox")
     
     
